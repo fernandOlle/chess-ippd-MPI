@@ -1,23 +1,24 @@
 #ifndef HASH_H_
 #define HASH_H_
 
+#include <semaphore.h>
+
+#include <iostream>
 #include <random>
 #include <unordered_map>
-#include <iostream>
-#include <semaphore.h>
+
 #include "types.h"
 
 extern int rank;
 
-class cHash
-{
-private:
-  unsigned long long mPieceHashes[832]; // 13 pieces * 64 board positions
+class cHash {
+ private:
+  unsigned long long mPieceHashes[832];  // 13 pieces * 64 board positions
   unsigned long long mBoardHash;
   unsigned long long mHashTableSize;
   std::unordered_map<unsigned long long, hashState> mHashTable;
 
-public:
+ public:
   cHash(int board[][8]);
   void fInitSemaphore();
   unsigned long long fGetHash();

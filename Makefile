@@ -1,4 +1,4 @@
-chessMPI: cGame.cpp cBoardState.cpp chessMPI.cpp cHash.cpp
+chess-ippd-mpi: cGame.cpp cBoardState.cpp chessMPI.cpp cHash.cpp
 	mpic++ -g -o chessMPI *.cpp 
 
 pvp:
